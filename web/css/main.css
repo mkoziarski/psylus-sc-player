@@ -23,12 +23,15 @@ a {
   max-width: 60em;
 }
 
-nav ul {
-  margin: 0;
+header {
   padding: 0.5em;
 }
 
-nav ul li {
+header ul {
+  margin: 0;
+}
+
+header ul li {
   list-style-type: none;
   float: right;
   padding: 0 0.3em;
