@@ -40,7 +40,7 @@ header ul li {
 }
 
 /* prototype boxes */
-#everything div {
+#everything section {
   clear: both;
   border: 1px dashed #444;
   margin-bottom: 0.5em;
