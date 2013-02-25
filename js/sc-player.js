@@ -102,6 +102,7 @@
     };
 
     var html5Driver = function() {
+      window.mklog("in html5Driver");
       var player = new Audio(),
           onTimeUpdate = function(event){
             var obj = event.target,
@@ -167,6 +168,7 @@
 
 
     var flashDriver = function() {
+      window.mklog("in flashDriver");
       var engineId = 'scPlayerEngine',
           player,
           flashHtml = function(url) {
@@ -242,9 +244,11 @@
       };
     };
 
+    window.mklog("html5 audio " + (html5AudioAvailable ? "" : "not") + " available");
     return html5AudioAvailable? html5Driver() : flashDriver();
 
   }();
+  window.mklog("audioEngine.play: " + audioEngine.play);
 
 
 
@@ -365,6 +369,7 @@
           .trigger((status ? 'onPlayerPlay' : 'onPlayerPause'));
       },
       onPlay = function(player, id) {
+        window.mklog("in onPlay");
         var track = getPlayerData(player).tracks[id || 0];
         updateTrackInfo(player, track);
         // cache the references to most updated DOM nodes in the progress bar
@@ -436,6 +441,7 @@
     $doc
       .bind('scPlayer:onAudioReady', function(event) {
         log('onPlayerReady: audio engine is ready');
+        window.mklog('onPlayerReady: audio engine is ready');
         audioEngine.play();
         // set initial volume
         onVolume(soundVolume);
@@ -618,6 +624,7 @@
 
   // toggling play/pause
   $('a.sc-play, a.sc-pause').live('click', function(event) {
+    window.mklog("play/pause clicked");
     var $list = $(this).closest('.sc-player').find('ol.sc-trackslist');
     // simulate the click in the tracklist
     $list.find('li.active').click();
@@ -640,8 +647,10 @@
         trackId = $track.data('sc-track').id,
         play = $player.is(':not(.playing)') || $track.is(':not(.active)');
     if (play) {
+      window.mklog("track clicked: play");
       onPlay($player, trackId);
     }else{
+      window.mklog("track clicked: pause");
       onPause($player);
     }
     $track.addClass('active').siblings('li').removeClass('active');
