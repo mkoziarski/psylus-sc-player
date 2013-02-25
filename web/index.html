@@ -7,6 +7,7 @@
       content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
     <title>Psylus</title>
     <link rel="stylesheet" href="./css/normalize.css" media="screen">
+    <link rel="stylesheet" href="./css/sc-player-standard.css" media="screen">
     <link rel="stylesheet" href="./css/main.css" media="screen">
   </head>
   <body>
@@ -17,6 +18,7 @@
       </ul><div class="clear"></div></header>
       <section class="essential">
         <p>play, subscribe</p>
+        <a href="http://soundcloud.com/psylus/thenumberfree" class="sc-player">The Number Free</a>
       </section>
       <section class="photos">
         <p>&nbsp;</p>
@@ -28,5 +30,22 @@
         <p>&nbsp;</p>
       </section>
     </div>
+    <script src="./js/jquery-1.8.3.min.js"></script>
+    <script>
+      window.mklog = function(msg) {
+        $("section.photos p").append("<span>" + msg + "</span><br>");
+      };
+    </script>
+    <script src="./js/soundcloud.player.api.js"></script>
+    <script src="./js/sc-player.js"></script>
+    <script>
+      window.setTimeout(function() {
+        if ($("object").length > 0) {
+          window.mklog("object");
+        } else if ($("audio").length > 0) {
+          window.mklog("audio");
+        }
+      }, 10000);
+    </script>
   </body>
 </html>
