@@ -136,19 +136,9 @@
           window.mklog("in audioEngine:load: paused");
           player.src = track.stream_url + (/\?/.test(track.stream_url) ? '&' : '?') + 'consumer_key=' + apiKey;
           window.mklog("in audioEngine:load: updated src: " + player.src);
-          player.load();
-          //window.mklog("in audioEngine:load: not executing player.load()");
-          window.mklog("in audioEngine:load: loaded");
-          window.mklog("in audioEngine:load: src: " + player.src);
+          //player.load();
+          window.mklog("in audioEngine:load: not executing player.load()");
           player.play();
-          window.setTimeout(function() {
-            player.pause();
-            window.mklog("paused");
-            window.setTimeout(function() {
-              player.play();
-              window.mklog("played");
-            }, 5000);
-          }, 5000);
           window.mklog("in audioEngine:load: played");
         },
         play: function() {
