@@ -131,12 +131,28 @@
 
       return {
         load: function(track, apiKey) {
+          window.mklog("in audioEngine:load");
           player.pause();
+          window.mklog("in audioEngine:load: paused");
           player.src = track.stream_url + (/\?/.test(track.stream_url) ? '&' : '?') + 'consumer_key=' + apiKey;
+          window.mklog("in audioEngine:load: updated src: " + player.src);
           player.load();
+          //window.mklog("in audioEngine:load: not executing player.load()");
+          window.mklog("in audioEngine:load: loaded");
+          window.mklog("in audioEngine:load: src: " + player.src);
           player.play();
+          window.setTimeout(function() {
+            player.pause();
+            window.mklog("paused");
+            window.setTimeout(function() {
+              player.play();
+              window.mklog("played");
+            }, 5000);
+          }, 5000);
+          window.mklog("in audioEngine:load: played");
         },
         play: function() {
+          window.mklog("in audioEngine:play");
           player.play();
         },
         pause: function() {
@@ -346,6 +362,7 @@
         $player.trigger('onPlayerTrackSwitch.scPlayer', [track]);
       },
       play = function(track) {
+        window.mklog("in play");
         var url = track.permalink_url;
         if(currentUrl === url){
           // log('will play');
