@@ -47,20 +47,20 @@
 .sc-player .sc-controls{
   position: absolute;
   z-index: 800;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   /*
   margin-left: -25px;
   margin-top: -25px;
   */
-  top: 0;
+  bottom: 0;
   left: 0;
 }
 
 .sc-player .sc-controls a{
   display: block;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
 }
 
 .sc-player .sc-controls a.sc-pause{
@@ -81,10 +81,10 @@
 
 .sc-scrubber {
   position: absolute;
-  left: 0px;
+  left: 41px;
   bottom: 0px;
   height: 40px;
-  width: 270px;
+  width: 229px;
   -webkit-box-shadow: 1px 1px 4px rgba(0,0,0,0.30);
   -moz-box-shadow: 1px 1px 4px rgba(0,0,0,0.30);
   display: block;
@@ -123,7 +123,7 @@
 .sc-scrubber .sc-time-indicators{
   position: absolute;
   right: 9px;
-  bottom: 10px;
+  bottom: 12px;
   z-index: 900;
 }
 
@@ -160,15 +160,14 @@
 
 .sc-player .sc-info {
   position: absolute;
-  top: 0px;
+  bottom: 48px;
   left: 0px;
   width : 100%;
-  height: 36px;
   z-index: 500;
 }
 
 .sc-player .sc-info h3 {
-  margin-left: 44px;
+  margin: 0 0 0 0.4em;
 }
 
 .sc-player .sc-info h4 {
@@ -187,6 +186,7 @@
 */
 
 .sc-player .sc-info-toggle{
+  display: none;
   position: absolute;
   top: 10px;
   left: 10px;
