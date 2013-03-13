@@ -421,7 +421,7 @@
         $nextItem.click();
       },
       soundVolume = function() {
-        var vol = 80,
+        var vol = 100,
             cooks = document.cookie.split(';'),
             volRx = new RegExp('scPlayer_volume=(\\d+)');
         for(var i in cooks){
