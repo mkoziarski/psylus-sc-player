@@ -47,18 +47,9 @@
 }
 
 
-.sc-scrubber .sc-waveform-container {
-  z-index: 800;
-  width: 100%;
-  position: absolute;
-}
-
 .sc-scrubber .sc-time-span img {
-  height: 30px;
-  width: 100%;
   /*background: -moz-linear-gradient(top, black, #22B573 0px, #7decba 90%);
   background: -webkit-gradient(linear, left top, left 90%, from(black), color-stop(0%, #22B573), to(#7decba));*/
-
 }
 
 .sc-scrubber .sc-buffer, .sc-scrubber .sc-played {
@@ -76,7 +67,7 @@
 
 .sc-player .sc-controls a {
   color: transparent;
-  background: url('../../css/sc-player-standard/img/play-green.png');
+  background: url('../../css/sc-player-standard/img/play-green.png') 50% 50%;
 }
 
 .sc-player .sc-controls a:hover {
@@ -100,11 +91,10 @@
 }  
 
 .sc-scrubber .sc-time-indicators{
-  background: #22B573;
+  /*background: #22B573;*/
   color: #fff;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
-  padding: 4px;
 }
 
 /* Track listings*/
