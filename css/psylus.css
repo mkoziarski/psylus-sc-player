@@ -19,7 +19,6 @@ a {
 
 #everything {
   margin: 0 auto;
-  padding: 0 1em;
   max-width: 60em;
 }
 
@@ -42,9 +41,6 @@ header ul li {
 /* prototype boxes */
 #everything section {
   clear: both;
-  border: 1px dashed #444;
-  margin-bottom: 0.5em;
-  padding: 1em;
 }
 
 .clear {
